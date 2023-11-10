@@ -11,7 +11,7 @@ public class Utils {
     private static ResourceBundle errorsBundle;
 
     static {
-        validationsBundle = ResourceBundle.getBundle("messages.validations");
+        validationsBundle = ResourceBundle.getBundle("messages.validation");
         errorsBundle = ResourceBundle.getBundle("messages.errors");
 
     }
