@@ -3,13 +3,15 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
         <meta charset="UTF-8">
+        <meta name="_csrf" th:content="${_csrf.token}">
+        <meta name="_csrf_header" th:content="${_csrf.headerName}">
         <title th:if="${pageTitle != null}" th:text="${pageTitle}"></title>
 
-        <!-- 공통 S -->
+        <!-- 모바일, pc 공통 S -->
         <link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}">
         <link rel="stylesheet" type="text/css" th:each="file : ${addCommonCss}"
               th:href="@{/common/css/{file}.css(file=${file})}">
-        <!-- 공통 E -->
+        <!-- 모바일, pc 공통 E -->
 
 
         <link rel="stylesheet" type="text/css" th:href="@{/admin/css/style.css}">
@@ -18,10 +20,10 @@
 
         <th:block layout:fragment="addCss"></th:block>
 
-        <!-- 공통 S -->
+        <!-- 모바일, pc 공통 S -->
         <script th:src="@{/common/js/common.js}"></script>
         <script th:each="file : ${addCommonScript}" th:src="@{/common/js/{file}.js(file=${file})}"></script>
-        <!-- 공통 E -->
+        <!-- 모바일, pc 공통 E -->
     
         <script th:src="@{/admin/js/common.js}"></script>
         <script th:each="file : ${addScript}" th:src="@{/admin/js/{file}.js(file=${file})}"></script>
