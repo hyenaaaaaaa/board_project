@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @NoArgsConstructor @AllArgsConstructor
-public class BoardData {
+public class BoardData extends BaseMember {
 
     @Id @GeneratedValue
     private Long seq;
@@ -27,13 +27,7 @@ public class BoardData {
     @Column(nullable = false)
     private String content;
 
-    @Column(updatable = false)
-    @CreationTimestamp
-    private LocalDateTime regDt;
 
-    @Column(insertable = false)
-    @UpdateTimestamp
-    private LocalDateTime modDt;
 
 
 }

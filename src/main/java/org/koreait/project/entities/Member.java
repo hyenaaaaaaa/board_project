@@ -23,7 +23,7 @@ import java.util.Date;
         @Index(name = "idx_member_userNm", columnList = "userNm"),
         @Index(name = "idx_member_mobile", columnList = "mobile")
 })
-public class Member {
+public class Member extends Base{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,16 +45,6 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private MemberType mtype = MemberType.USER;
 
-    @Column(updatable = false)
-    @CreationTimestamp
-    private LocalDateTime regDt;
-
-    @Column(insertable = false)
-    @UpdateTimestamp
-    private LocalDateTime modDt;
-
-    @Transient
-    private String tmpData;
 
     /*
     @Temporal()
