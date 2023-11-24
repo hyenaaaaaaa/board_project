@@ -29,6 +29,6 @@ public class BoardSaveTest {
                 .with(csrf())
         ).andReturn().getResponse().getRedirectedUrl();
 
-        assertTrue(url.contains("/board/view"));
+        assertTrue(url.contains("/board/list"));
     }
 }
