@@ -6,7 +6,6 @@ spring:
   profiles:
     active: dev
 
-
   # 데이터베이스 설정
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
@@ -18,6 +17,7 @@ spring:
   jpa:
     properties:
       hibernate:
+        globally_quoted_identifiers: true
         # 실행되는 쿼리를 콘솔에 출력
         show_sql: true
         format_sql: true
@@ -32,9 +32,10 @@ spring:
       maxFileSize: 20MB
       maxRequestSize: 40MB
 
-  # 정적 자원 설정 (CSS, JS, 이미지)
-  resources:
-    staticLocations: file:src/main/resources/static/
+  # 정적 자원 설정(CSS, JS, 이미지)
+  web:
+    resources:
+      staticLocations: file:src/main/resources/static/
 
   # 라이브 리로드 설정
   devtools:
