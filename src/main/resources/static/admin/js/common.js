@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function(){
             frm._method.value = mode == 'delete' ? 'DELETE' : 'PATCH';
             const confirmMsg = mode == 'delete' ? '삭제' : '수정';
             confirmMsg = `정말 ${confirmMsg} 하시겠습니까?`;
-            if(confirm(confrimMsg)) {
+            if(confirm(confirmMsg)) {
             frm.submit();
             }
         });
